@@ -1,15 +1,16 @@
 # DjangoWeb
 Background based on Django！
 
-因为本人还是学生，无法得到实际需求，所以这个项目只有用户管理功能，项目暂停，工作以后会继续完善。为此将会重新开发一个博客网站项目继续学习。
+### 因为本人还是学生，无法得到实际需求，所以这个项目只有用户管理功能，项目暂停，工作以后会继续完善。将会重新开发一个博客网站项目继续学习。
 
-@@ 使用Docker-compose部署Django环境：
-@@ System - Centos7.0
-@@ Django - 1.9.5
-@@ Python - 3.6.0
+## @@ 使用Docker-compose部署Django环境：
+## @@ System - Centos7.0
+## @@ Django - 1.9.5
+## @@ Python - 3.6.0
 
+```Bash
 yum -y install docker
-
+```
 systemctl start docker
 
 ###使用daocloud镜像加速###
