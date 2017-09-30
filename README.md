@@ -62,10 +62,15 @@ ADD . /code/
 ```
 
 第1行的FROM指令表示新的镜像将基于python:2.7的镜像来构建 
+
 第2行的ENV为环境变量（PYTHONUNBUFFERED见这里） 
+
 第3行的RUN指令表示在镜像内新建/code目录 
+
 第4行指定指定RUN、CMD与ENTRYPOINT命令的工作目录 
+
 第5行是将./mysite/requirements.txt文件添加到刚才新建的code目录中 
+
 第6行运行pip安装所需的软件
 
 
@@ -95,15 +100,23 @@ web:
     - db
 ```
 db标签： 
+
 images表示使用mysql镜像 
+
 expose表示暴露端口3306，但不发布到宿主机上 
+
 volume表示挂载宿主机的路径作为卷，冒号左边为宿主机路径，右边为镜像内路径 
+
 environment为环境变量，每个容器都有自己定义的环境变量，具体查看镜像手册中的mysql
 
 web标签： 
+
 build指定建立Dockerfile路径 
+
 command将覆盖默认的命令 
+
 ports指定主机开放的端口 
+
 links指向其他容器中的服务
 
 在子目录mysite下requirements.txt文件，该文件内容如下:
