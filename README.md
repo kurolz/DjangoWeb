@@ -8,8 +8,11 @@ Background based on Django！
 [http://www.mykurol.com](http://www.mykurol.com)  
 
 @@ 使用Docker-compose部署Django环境
+
 @@ System - Centos7.0
+
 @@ Django - 1.9.5
+
 @@ Python - 3.6.0
 
 ```Bash
