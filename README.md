@@ -170,14 +170,15 @@ DATABASES = {
 [root@VM_34_67_centos DjangoWeb]# iptables -t nat -A  DOCKER -p tcp --dport 80 -j DNAT --to-destination 172.17.0.3:8000     
 ```
 
-导入数据库。
+然后进入mysql容器导入数据库
 
-############## 先前台运行无报错再转入后台运行 ##############
 进入mysite目录，启动容器：
 ```Bash
 docker-compose up
 ```
-退出应用Crtl+C
+@@ 有些python模块没有安装，需要进入容器自行安装。
+
+@ 无报错可 Crtl+C 退出应用,转入后台运行
 
 后台运行：
 ```Bash
@@ -187,4 +188,4 @@ docker-compose up -d
 ```Bash
 docker-compose stop
 ```
-注意down会删除容器。
+@@ 注意down会删除容器。
