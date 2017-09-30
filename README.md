@@ -7,7 +7,9 @@ Background based on Django！
 
 [http://www.mykurol.com](http://www.mykurol.com)  
 
-@@ 使用Docker-compose部署Django环境
+完善后会开源。
+
+@@ 使用Docker-compose部署Django环境：
 
 @@ System - Centos7.0
 
@@ -170,7 +172,10 @@ DATABASES = {
 [root@VM_34_67_centos DjangoWeb]# iptables -t nat -A  DOCKER -p tcp --dport 80 -j DNAT --to-destination 172.17.0.3:8000     
 ```
 
+现在可以将项目移入新建的项目中
+
 然后进入mysql容器导入数据库
+
 
 进入mysite目录，启动容器：
 ```Bash
