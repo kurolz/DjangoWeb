@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>运维管理平台</title>
+<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
+{#<link rel="icon" href="/images/logo.ico" type="img/x-ico" />#}
+<div class="in">
+    <div class="header">
+        <div class="pass" style="width: 70px; height: 60px; float: left">
+
+        </div>
+        <div class="submiting">
+            <img class="changeMenu" src="{% static "img/shouqicaidan.png" %}" onClick="hidMenu()">
+            <a href="/webserver/index/" class="qiantaishouye" style="width: 80px;">首页</a>
+            <a href="" class="qingchuhuancun" style="width: 80px;">清除缓存</a>
+            <a href="/webserver/logout/" class="tuichudenglu" style="width: 80px;">退出登录</a>
+        </div>
+    </div>
+</div>
+</head>

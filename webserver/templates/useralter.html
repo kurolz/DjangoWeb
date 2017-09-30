@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
+<link href="{%static "css/userstyle.css" %}" rel="stylesheet" type="text/css" />
+{% include "header.html" %}
+{% include 'menu.html' %}
+{#{% if succes_alter %}#}
+{#    <script type="text/javascript" src="{%static "js/jquery-1.11.0.min.js" %}"></script>#}
+{#    <script type="text/javascript" src="{%static "js/alert.js" %}"></script>#}
+{#    <link href="{%static "css/alert.css" %}" rel="stylesheet" type="text/css" />#}
+{#    <script type="text/javascript">#}
+{#        Alert.showMsg("用户信息修改成功！");#}
+{#        location.href="/webserver/user/list/"#}
+{#    </script>#}
+{#{% endif %}#}
+<body>
+<div class="home">
+    <div class="home_right">
+        <div class="homepage">
+            <div class="ptbt"><a>运维平台</a></div>
+            <div class="pagename"><a>修改用户信息</a></div>
+            <div class="dangqianweizhi"><a>首页 > 权限系统 > 修改用户信息</a></div>
+        </div>
+        <div class="user_gncj">
+            <a class="button icon add" href="/webserver/user/add/">创建用户</a>
+        </div>
+        <div class="user_gnlb">
+            <a class="button icon home" href="/webserver/user/list/">用户列表</a>
+        </div>
+        <div class="user_hr">
+        </div>
+        <div class="user_add">
+            <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+                <dl>
+                    <dt><label for="add_user">用户名：</label></dt>
+                    <dd><p class="updateusername">{{ UpdateUser }}</p></dd>
+                </dl>
+                <dl>
+                    <dt><label for="add_email">邮箱：</label></dt>
+                    <dd>{{ alter_FormInput.alter_email }}</dd>
+                </dl>
+                <dl>
+                    <dt><label for="add_role">角色：</label></dt>
+                    <dd>
+                        <select name="add_role" id="add_role">
+                            <option value="1">------</option>
+                            <option value="2">CMDB</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><label for="add_isactive">状态：</label></dt>
+                    <dd>
+                        {{ alter_FormInput.alter_isactive }}
+                        <script>
+                            document.getElementById("id_alter_isactive").value = "{{ alter_is_active }}"
+                        </script>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd>
+                        <input class="user_add_bing" type="submit" name="bing" value="修改"/>
+                    </dd>
+                </dl>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<link href="{% static "css/adstyle.css"%}" rel="stylesheet" type="text/css" />
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login</title>
+</head>
+{% if password_is_wrong %}
+    <script type="text/javascript" src="{%static "js/jquery-1.11.0.min.js" %}"></script>
+    <script type="text/javascript" src="{%static "js/alert.js" %}"></script>
+    <link href="{%static "css/alert.css" %}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        Alert.showMsg("错误!!用户名或密码错误!");
+        location.href="/webserver/login/"
+    </script>
+{% endif %}
+<body>
+    <div class="admin-ht" style="background: url(/static/images/lo.jpg);">
+        <div class="adminBord">
+            <h1>运维管理平台</h1>
+        <h4>{{ nowtime }}</h4>
+            <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{uf.as_p}}
+                <input type="submit" value="login" id="loging">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

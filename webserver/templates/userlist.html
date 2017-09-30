@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
+<link href="{%static "css/userstyle.css" %}" rel="stylesheet" type="text/css" />
+{% include "header.html" %}
+{% include 'menu.html' %}
+<style>
+.button.icon:before {
+    content: "";
+    position: relative;
+    top: 1px;
+    float:left;
+    width: 12px;
+    height: 12px;
+    margin: 0 0.75em 0 -0.25em;
+    background: url("{% static "img/gh-icons.png" %}") 0 99px no-repeat;
+}
+</style>
+<body>
+<div class="home">
+    <div class="home_right">
+        <div class="homepage">
+            <div class="ptbt"><a>运维平台</a></div>
+            <div class="pagename"><a>用户信息列表</a></div>
+            <div class="dangqianweizhi"><a>首页 > 权限系统 > 用户管理</a></div>
+        </div>
+        <div class="user_gncj">
+            <a class="button icon add" href="/webserver/user/add">创建用户</a>
+        </div>
+        <div class="user_gnlb">
+            <a class="button icon home" href="/webserver/user/list/">用户列表</a>
+        </div>
+        <div class="user_hr">
+        </div>
+        <div class="user_list">
+            <div class="user_list_ls">
+                <table class="table table-striped table-bordered table-hover" table-layout=fixed; width=100%; align="center">
+                    <thead>
+                    <tr>
+                        <th>用户</th>
+                        <th>邮箱</th>
+                        <th>状态</th>
+                        <th>角色</th>
+                        <th>最后登录时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for line in user_list %}
+                        <tr>
+                            <td>
+                                {{ line.username }}
+                            </td>
+                            <td>
+                                {{ line.email }}
+                            </td>
+                            <td>
+                                {{ line.is_active }}
+                            </td>
+                            <td>
+                                {{ line.webserver.user_role }}
+                            </td>
+                            <td>
+                                {{ line.last_login }}
+                            </td>
+                            <td width="120">
+                                <a href="{% url 'user_alter' line.id %}" class="bianji">编辑</a>
+                                <a href="{% url 'user_listcc' line.id %}" onclick="return delete_sql();" class="shanchu">删除</a>
+                                <script language="JavaScript">
+                                    function delete_sql(){
+                                        if(confirm("您确定要删除吗?")){
+                                            return true;
+                                        }else{
+                                            return false;
+                                        }
+                                    }
+                                </script>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="drpage">
+                    {% if user_list.has_previous %}
+                        <a href="?page=1" class='fy'>首页</a>&nbsp;
+                        <a href="?page={{ user_list.previous_page_number }}" class='fy'>上一页</a>&nbsp;
+                    {% endif %}
+                    {% for p in page_range %}
+                    {% ifequal p user_list.number %}
+                        <span class="fy">{{p}}</span>
+                    {% else %}
+                        <a href="?page={{p}}" class="fy" style="margin: 3px">{{p}}</a>
+                    {% endifequal %}
+                    {% endfor %}
+                    {% if user_list.has_next %}
+                        <a href="?page={{ user_list.next_page_number }}" class='fy'>下一页</a>&nbsp;
+                        <a href="?page={{ user_list.paginator.num_pages }}" class='fy'>尾页</a>
+                    {% endif %}
+                        <a>[第{{ user_list.number }}/{{ user_list.paginator.num_pages }}页]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

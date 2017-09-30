@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9069afda-58e3-459c-9511-ed09e0aee972" name="DjangoWeb" url="http://localhost:8000/webserver">
+        <fileTransfer port="0" mountedRoot="F:\DjangoWeb" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

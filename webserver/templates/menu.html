@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<meta charset="utf-8" />
+<!-- 通用样式 -->
+<link rel="stylesheet" type="text/css" href="{% static "css/public.css" %}">
+<!-- 动态菜单CSS -->
+<link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}">
+<!-- jquery引入 -->
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- 动态菜单JS -->
+<script type="text/javascript" src="{% static "js/menu.js" %}"></script>
+<div class="middle">
+	<div class="leftMenu">
+		<div class="topMenu">
+			<img class="banshi" src="{% static "img/banshidating.png" %}"/>
+			<p class="menuTitle">运维管理平台</p>
+		</div>
+		<div class="menu_list">
+			<ul>
+				<li class="">
+					<p class="fuMenu"><a href="/webserver/index">首页</a></p>
+				</li>
+				<li class="">
+					<p class="fuMenu">CMDB系统</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+						<p class="zcd" id="zcd9">数据添加</p>
+                        <p class="zcd" id="zcd10"><a href="/webserver/cmdb/serverlist/">数据查询</a></p>
+						<p class="zcd" id="zcd11">历史数据查询</p>
+						<p class="zcd" id="zcd12">树状查询</p>
+						<p class="zcd" id="zcd12">自动收集cmdb信息</p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu"><a href="#">安装部署系统</a></p>
+				</li>
+				<li class="">
+					<p class="fuMenu">监控系统</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+						<p class="zcd" id="zcd19">网站访问流量</p>
+						<p class="zcd" id="zcd20">监控系统</p>
+						<p class="zcd" id="zcd19">监控系统</p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu">权限管理</p>
+					<img class="xiala" src="{% static "img/xiala.png" %}" />
+					<div class="div1">
+                        <p class="zcd" id="zcd19"><a href="/webserver/user/list/">用户管理</a></p>
+						<p class="zcd" id="zcd20"><a href="/webserver/user/role/">角色管理</a></p>
+						<p class="zcd" id="zcd19"><a href="/webserver/user/power/">权限管理</a></p>
+					</div>
+				</li>
+				<li class="">
+					<p class="fuMenu"><a href="/webserver/logout/">退出</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

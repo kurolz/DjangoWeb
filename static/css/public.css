@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+    font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
+    line-height: 1;
+    color: #85888e;
+    min-width: 1300px;
+}
+
+ul,
+li {
+	list-style: none
+}
+
+input,
+textarea {
+	outline: 0
+}
+
+img {
+	max-width: 100%
+}
+
+img,
+input {
+	border: 0;
+	vertical-align: top
+}
+
+a {
+	color: #85888e;
+	text-decoration: none;
+	outline: 0;
+}
