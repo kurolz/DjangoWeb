@@ -126,8 +126,9 @@ vim /mysite/DjangoWeb/requirements.txt
 django==1.9.5
 mysqlclient
 django-admin-bootstrapped
-bootstrap3
+django_bootstrap3
 pillow
+salt
 ```
 
 构建镜像:
