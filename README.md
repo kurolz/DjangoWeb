@@ -1,7 +1,9 @@
 # DjangoWeb
 Background based on Django！
 
-因为本人还是学生，无法得到实际需求，所以这个项目只有用户管理功能，项目暂停，工作以后会继续完善。
+2017.9.1 - 因为本人还是学生，无法得到实际需求，所以这个项目只有用户管理功能，项目暂停，工作以后会继续完善。
+
+2017.10.25 - 本项目已经实现了一些功能，完善后会更新仓库，交流联系QQ：526653382
 
 重新开发了一个博客网站项目继续学习：
 
@@ -126,8 +128,9 @@ vim /mysite/DjangoWeb/requirements.txt
 django==1.9.5
 mysqlclient
 django-admin-bootstrapped
-bootstrap3
+django_bootstrap3
 pillow
+salt
 ```
 
 构建镜像:
