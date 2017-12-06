@@ -13,8 +13,8 @@
     <div class="home_right">
         <div class="homepage">
             <div class="ptbt"><a>运维平台</a></div>
-            <div class="pagename"><a>用户信息列表</a></div>
-            <div class="dangqianweizhi"><a>首页 > 权限系统 > 用户管理</a></div>
+            <div class="pagename"><a>主机信息列表</a></div>
+            <div class="dangqianweizhi"><a>首页 > CMDB系统 > 数据查询</a></div>
         </div>
         <div class="user_hr">
         </div>
@@ -25,13 +25,13 @@
                         查询条件
                     </div>
                     <div class="panel-body form-group" style="margin-bottom:0px;">
-                        <label class="col-sm-1 control-label" style="text-align: right; margin-top:5px">用户名：</label>
+                        <label class="col-sm-1 control-label" style="text-align: right; margin-top:5px">主机名：</label>
                         <div class="col-sm-2">
                             <input type="text" class="form-control" name="Name" id="search_name"/>
                         </div>
-                        <label class="col-sm-1 control-label" style="text-align: right; margin-top:5px">手机号：</label>
+                        <label class="col-sm-1 control-label" style="text-align: right; margin-top:5px">IP：</label>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" name="Name" id="search_tel"/>
+                            <input type="text" class="form-control" name="Name" id="search_ip"/>
                         </div>
                         <div class="col-sm-1 col-sm-offset-2">
                             <button class="btn btn-primary" id="search_btn">查询</button>
@@ -44,7 +44,7 @@
                                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
                               </button>
                               <button id="btn_add" type="button" class="btn btn-default">
-                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><a href="/webserver/cmdb/serveradd/" style="color: #333333">新增</a>
                               </button>
                         </div>
                      </div>
@@ -91,37 +91,54 @@
                                     valign:'middle'
                                 },
                                 {
-                                    title:'用户名',
-                                    field:'username',
+                                    title:'主机名',
+                                    field:'hostname',
                                     sortable:true,
                                 },
                                 {
-                                    title:'邮箱',
-                                    field:'email',
+                                    title:'IP',
+                                    field:'IP',
+                                    sortable:true
+                                },
+                                {
+                                    title:'内存(G)    ',
+                                    field:'Mem',
+                                    sortable:true
+                                },
+                                {
+                                    title:'CPU型号',
+                                    field:'CPU',
+                                    sortable:true
+                                },
+                                {
+                                    title:'CPU线程数',
+                                    field:'CPUS',
+                                    sortable:true
+                                },
+                                {
+                                    title:'操作系统',
+                                    field:'OS',
+                                    sortable:true
+                                },
+                                {
+                                    title:'virtual',
+                                    field:'virtual1',
                                     sortable:true
                                 },
                                 {
                                     title:'状态',
-                                    field:'is_active',
+                                    field:'status',
                                     sortable:true
                                 },
                                 {
-                                    title:'角色',
-                                    field:''
-                                },
-                                {
-                                    title:'最后登录时间',
-                                    field:'last_login'
-                                },
-                                {
                                     title:'操作',
-                                    field:'status',
+                                    field:'id',
                                     align:'center',
                                     //列数据格式化
                                     //formatter:operateFormatter
                                     formatter:function(value,row,serverlist){
                                         var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.id + '\')">编辑</a> ';
-                                        var d = '<a href="#" mce_href="#" onclick="del(\''+ row.id +'\')">删除</a> ';
+                                        var d = '<a href="{% url "server_list"%}'+ row.id +'" mce_href="#" onclick="return delete_sql();">删除</a> ';
                                             return e+d;
                                     }
                                 }
@@ -146,6 +163,15 @@
                         //当点击查询按钮的时候执行
                         $("#search").bind("click", initTable);
                     });
+
+                    function delete_sql(){
+                        if(confirm("您确定要删除这台主机吗?")){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+
                 </script>
             </div>
         </div>

@@ -3,74 +3,57 @@
 {% load staticfiles %}
 <link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
 <link href="{%static "css/userstyle.css" %}" rel="stylesheet" type="text/css" />
+<link href="{%static "css/code/prism.css" %}" rel="stylesheet" type="text/css" />
+<script src="{%static "js/code/prism.js" %}"></script>
 {% include "header.html" %}
 {% include 'menu.html' %}
-{#{% if add_newuser %}#}
-{#    <script type="text/javascript" src="{%static "js/jquery-1.11.0.min.js" %}"></script>#}
-{#    <script type="text/javascript" src="{%static "js/alert.js" %}"></script>#}
-{#    <link href="{%static "css/alert.css" %}" rel="stylesheet" type="text/css" />#}
-{#    <script type="text/javascript">#}
-{#        Alert.showMsg("'{{ add_newuser }}'用户添加成功！");#}
-{#        location.href="/webserver/user/add"#}
-{#    </script>#}
-{#{% endif %}#}
 <body>
 <div class="home">
     <div class="home_right">
         <div class="homepage">
-            <div class="ptbt"><a>运维平台</a></div>
-            <div class="pagename"><a>添加新用户</a></div>
-            <div class="dangqianweizhi"><a>首页 > 权限系统 > 创建用户</a></div>
+            <div class="ptbt"><a>资产管理</a></div>
+            <div class="pagename"><a>自动添加主机</a></div>
+            <div class="dangqianweizhi"><a>首页 > 资产管理 > 自动添加主机</a></div>
         </div>
-        <div class="user_gncj">
-            <a class="button icon add" href="/webserver/user/add/">创建用户</a>
-        </div>
-        <div class="user_gnlb">
-            <a class="button icon home" href="/webserver/user/list/">用户列表</a>
-        </div>
-        <div class="user_hr">
-        </div>
-        <div class="user_add">
-            <form method="post" enctype="multipart/form-data" >
-            {% csrf_token %}
-                <dl>
-                    <dt><label for="add_user">用户名：</label></dt>
-                    <dd>{{ add_FormInput.add_user }}</dd>
-                </dl>
-                <dl>
-                    <dt><label for="add_password">密码：</label></dt>
-                    <dd>{{ add_FormInput.add_password }}</dd>
-                </dl>
-                <dl>
-                    <dt><label for="add_passwordtwo">密码确认：</label></dt>
-                    <dd>{{ add_FormInput.add_passwordtwo }}</dd>
-                </dl>
-                <dl>
-                    <dt><label for="add_email">邮箱：</label></dt>
-                    <dd>{{ add_FormInput.add_email }}</dd>
-                </dl>
-                <dl>
-                    <dt><label for="add_role">角色：</label></dt>
-                    <dd>
-                        <select name="add_role" id="add_role">
-                            <option value="1">------</option>
-                            <option value="2">CMDB</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><label for="add_isactive">状态：</label></dt>
-                    <dd>
-                        {{ add_FormInput.add_isactive }}
-                    </dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd>
-                        <input class="user_add_bing" type="submit" name="bing" value="添加"/>
-                    </dd>
-                </dl>
-            </form>
+        <div class="user_list">
+            <div class="user_list_ls">
+                <div class="panel panel-default" style="width:34.5%;float: left;height:648px;margin-right: 0.5%;">
+                    <div class="panel-heading">
+                        自动部署salt-minion
+                    </div>
+                    <div class="panel-body form-group" style="margin-bottom:0;">
+                        <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">IP：</label>
+                                <div class="col-sm-2" style="width:60%;">
+                                    {{ form.add_ip }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Username：</label>
+                                <div class="col-sm-2" style="width:60%;">
+                                    {{ form.add_username }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Password：</label>
+                                <div class="col-sm-2" style="width:60%;">
+                                    {{ form.add_password }}
+                                </div>
+                            </div>
+                                <div class="col-sm-1 col-sm-offset-2"  style="margin-left:0">
+                                    <button type="submit" class="btn btn-default" id="search_btn">添加</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <div style="width: 65%;background-color: #FFFFFF;height: 648px;float: left;margin: 0">
+                    <pre class="language-Makefile" style="width: 100%; height: 648px; padding: 10px; text-align: left; font-size: 15px;margin: 0">
+                        <code class="language-Makefile">{{ result }}</code>
+                    </pre>
+                </div>
+            </div>
         </div>
     </div>
 </div>

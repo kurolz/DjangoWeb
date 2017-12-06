@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+
+<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
+<!-- 引入 ECharts 文件 -->
+<script src="{%static "js/echarts.js" %}"></script>
+{% include "header.html" %}
+{% include 'menu.html' %}
+{% csrf_token %}
+<body>
+<div class="home">
+    <div class="home_right">
+        <div class="homepage">
+            <div class="ptbt"><a>运维平台</a></div>
+            <div class="pagename"><a>监控主机信息</a></div>
+            <div class="dangqianweizhi"><a>首页 > 监控系统 > 监控</a></div>
+        </div>
+        <div class="user_hr">
+        </div>
+        <div class="user_list">
+            <div class="user_list_ls">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        选择监控的主机
+                    </div>
+                    <div class="panel-body form-group" style="margin-bottom:0;">
+                        <form method="post" enctype="multipart/form-data" >
+                            {% csrf_token %}
+                            <label class="col-sm-1 control-label" style="margin-top:10px">主机名：</label>
+                            <div class="col-sm-2">
+                                {{ monitorform.monitorHost }}
+                            </div>
+                            <div class="col-sm-1 col-sm-offset-2"  style="margin-left:0">
+                                <button type="submit" class="btn btn-primary" id="search_btn">查询</button>
+                            </div>
+                        </form>
+                        <div class="col-sm-4" style="float: right;margin-top: 10px;">
+                            <a>Number Of Hosts: {{ host_num }}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- cpu使用率 -->
+                <div id="main_cpuutils" style="width: 33%;height:350px;border:1px solid #dddddd;float: left;margin-right: 8px;"></div>
+                <!-- cpu负载 -->
+                <div id="main_cpuload" style="width: 33%;height:350px;border:1px solid #dddddd;float: left;margin-right: 8px;"></div>
+                <!-- 磁盘信息 -->
+                <div id="main_fssize" style="width: 33%;height:350px;border:1px solid #dddddd;float: left;"></div>
+                <!-- 内存使用率 -->
+                <div id="main_memoryratio" style="width: 100%;height:450px;border:1px solid #dddddd;float: left;margin-top: 10px;"></div>
+                <script type="text/javascript">
+
+                    //####################  【cpu使用率】图形  ####################
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart_cpuutils = echarts.init(document.getElementById('main_cpuutils'));
+                    // 指定图表的配置项和数据
+                    option_cpuutils = {
+                        tooltip : {
+                            formatter: "{a} <br/>{b} : {c}%"
+                        },
+                        toolbox: {
+                            feature: {
+                                restore: {},
+                                saveAsImage: {}
+                            }
+                        },
+                        series: [
+                            {
+                                name: 'CPU使用率',
+                                type: 'gauge',
+                                detail: {formatter:'{value}%'},
+                                data: [{value: {{ cpuutils_now }}, name: 'CPU使用率'}]
+                            }
+                        ]
+                    };
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart_cpuutils.showLoading();
+                    setInterval(function () {
+                        myChart_cpuutils.hideLoading();
+                        myChart_cpuutils.setOption(option_cpuutils, true);
+                    },2000);
+
+                    // ####################  【cpu负载】图形  ####################
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart_cpuload = echarts.init(document.getElementById('main_cpuload'));
+                    // 指定图表的配置项和数据
+                    option_cpuload = {
+                        tooltip : {
+                            formatter: "{a} <br/>{b} : {c}%"
+                        },
+                        toolbox: {
+                            feature: {
+                                restore: {},
+                                saveAsImage: {}
+                            }
+                        },
+                        series: [
+                            {
+                                name: 'CPU负载',
+                                type: 'gauge',
+                                detail: {formatter:'{value}%'},
+                                data: [{value: {{ cpuload_now }}, name: 'CPU负载'}]
+                            }
+                        ]
+                    };
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart_cpuload.showLoading();  //显示loading
+                    setInterval(function () {
+                        myChart_cpuload.hideLoading();  //显示完成后不显示loading
+                        myChart_cpuload.setOption(option_cpuload, true);
+                    },2000);
+
+                    // 磁盘使用饼图
+                    var myChart_fssize = echarts.init(document.getElementById('main_fssize'));
+                    option_fssize = {
+                        series : [
+                            {
+                                name: '磁盘情况',
+                                type: 'pie',
+                                radius: '55%',
+                                roseType: 'angle',
+                                detail: {formatter:'{value}'},
+                                data:[
+                                    {value:{{ fsused_now }}, name:'磁盘用量'},
+                                    {value:{{ fsfree_now }}, name:'磁盘空闲'}
+
+                                ]
+                            }
+                        ]
+                    };
+                    myChart_fssize.showLoading();  //显示loading
+                    setInterval(function () {
+                        myChart_fssize.hideLoading();  //显示完成后不显示loading
+                        myChart_fssize.setOption(option_fssize, true);
+                    },2000);
+
+                     // ####################  【内存使用率】图形  ####################
+                    var myChart_memoryratio = echarts.init(document.getElementById('main_memoryratio'));
+                    option_memoryratio = {
+                        title: {
+                            text: '内存使用率',
+                            subtext: ''
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'cross'
+                            }
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                saveAsImage: {}
+                            }
+                        },
+                        xAxis:  {
+                            type: 'category',
+                            boundaryGap: false,
+                            zlevel: 1,
+                            data: [{% for i in data %}'{{ i.time | date:"m-d H:i:s" }}',{% endfor %}]
+                        },
+                        yAxis: {
+                            type: 'value',
+                            axisLabel: {
+                                formatter: '{value}'
+                            },
+                            axisPointer: {
+                                snap: true
+                            },
+                            max:1,
+                            min:0
+                        },
+                        visualMap: {
+                            show: false,
+                            dimension: 0,
+                            pieces: [{
+                                lte: 6,
+                                color: 'green'
+                            }, {
+                                gt: 6,
+                                lte: 8,
+                                color: 'red'
+                            }, {
+                                gt: 8,
+                                lte: 14,
+                                color: 'green'
+                            }, {
+                                gt: 14,
+                                lte: 17,
+                                color: 'red'
+                            }, {
+                                gt: 17,
+                                color: 'green'
+                            }]
+                        },
+                        series: [
+                            {
+                                name:'内存使用率',
+                                type:'line',
+                                smooth: true,
+                                data: [{% for i in data %}{{ i.ratio }},{% endfor %}]
+                            }
+                        ]
+                    };
+                    myChart_memoryratio.showLoading();  //显示loading
+                    setInterval(function () {
+                        myChart_memoryratio.hideLoading();  //显示完成后不显示loading
+                        myChart_memoryratio.setOption(option_memoryratio, true);
+                    },500);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -3,6 +3,13 @@
 {% load staticfiles %}
 <link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
 {% include "header.html" %}
+<style>
+    body{
+        background-color: #F2F2F2;
+        margin-left: 220px;
+        margin-top: 60px;
+    }
+</style>
 <body>
 {% include 'menu.html' %}
 <div class="home">
@@ -10,6 +17,14 @@
         <div class="ptbt"><a>运维平台</a></div>
         <div class="pagename"><a>首页面板</a></div>
         <div class="dangqianweizhi"><a>首页</a></div>
+    </div>
+</div>
+<div class="content" align="center">
+    <ol class="breadcrumb"  style="background-color: #FFFFFF; margin-bottom: 15px; width: 95%; height: 50px;">
+        <li class="active" style="color: #1c2b36;text-align: left; line-height: 50px;margin-left: 10px; font-size: 15px;"><b>仪表盘 /</b></li>
+    </ol>
+    <div class="jktu" style="width: 95%;background-color: #FFFFFF; margin-bottom: 20px;">
+        <img src="http://www.mykurol.com:8088/chart3.php?period=3600&name=CPU%20jumps&width=900&height=200&graphtype=0&legend=1&percent_left=0.0000&percent_right=0.0000&ymin_type=0&ymax_type=0&yaxismin=0.0000&yaxismax=100.0000&ymin_itemid=0&ymax_itemid=0&showworkperiod=1&showtriggers=1&items[0][gitemid]=2291&items[0][graphid]=523&items[0][itemid]=23298&items[0][sortorder]=0&items[0][flags]=0&items[0][type]=0&items[0][calc_fnc]=2&items[0][drawtype]=0&items[0][yaxisside]=0&items[0][color]=009900&items[1][gitemid]=2292&items[1][graphid]=523&items[1][itemid]=23294&items[1][sortorder]=1&items[1][flags]=0&items[1][type]=0&items[1][calc_fnc]=2&items[1][drawtype]=0&items[1][yaxisside]=0&items[1][color]=000099">
     </div>
 </div>
 </body>

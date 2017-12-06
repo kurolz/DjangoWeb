@@ -1,98 +1,1 @@
-.middle{
-	width: 220px;
-	margin: 0px auto;
-	position:fixed;
-    top:0;
-    left:0;
-	height: 100%;
-	z-index:auto;
-}
-.middle .leftMenu{
-	width: 220px;
-	height: 100%;
-	background-color: #1c2b36;
-	float: left;
-}
-.middle .leftMenu .topMenu{
-	height: 60px;
-	background-color: #0065a5;
-}
-.middle .leftMenu .topMenu .banshi{
-	padding-left: 23px;
-	float: left;
-	padding-top: 20px;
-}
-.middle .leftMenu .topMenu .menuTitle{
-	text-align: center;
-	color: #F2F2F2;
-	float: left;
-	line-height: 60px;
-	font-size: 16px;
-	width: 120px;
-}
-.menu_list {
-	width: 220px;
-	background: #354045;
-}
-.menu_list ul li{
-	display: block;
-	text-align: center;
-	width: 100%;
-}
-.menu_list ul li .fuMenu{
-	color: #F2F2F2;
-	font-size: 14px;
-	cursor: pointer;
-	height: 60px;
-	line-height: 60px;
-	text-align: center;
-	width: 220px;
-	border-bottom: 1px solid #16222b;
-	float: left;
-}
-.menu_list ul li .fuMenu a{
-	display:block;
-	color: #F2F2F2;
-	width: 220px;
-	height: 60px;
-}
-
-.menu_list ul li .xiala{
-	float: left;
-	margin-left: -50px;
-	margin-top: 27px;
-}
-.menu_list ul li .div1 {
-	width: 100%;
-	height: auto;
-	float: left;
-}
-.menu_list ul li .div1 .zcd{
-	color: #869fb1;
-	font-size: 14px;
-	height: 60px;
-	background-color: #131e26;
-	margin-bottom: 1px;
-	cursor: pointer;
-	line-height: 60px;
-	text-align: center;
-	width: 220px;
-}
-.menu_list ul li .div1 .zcd a{
-	color: #869fb1;
-	font-size: 14px;
-	display:block;
-	height: 60px;
-	width: 220px;
-
-}
-.div1 {
-	height: 200px;
-	display: none;
-}
-.menu_list ul li .div1 .zcd:hover{ color: #FFF; background-color: #1c2b36; font-weight: bold; }
-.menu_list ul li .div1 .zcd a:hover{ color: #FFF; background-color: #1c2b36; font-weight: bold; }
-.removes{
-	color: #0FB9EF !important;
-	border-left: 3px solid #0FB9EF;
-}
+.middle{	width: 220px;	margin: 0 auto;	position:fixed;    top:0;    left:0;	height: 100%;	z-index:auto;}.middle .leftMenu{	width: 220px;	height: 100%;	background-color: #1c2b36;	float: left;}.middle .leftMenu .topMenu{	height: 60px;	background-color: #293c55;	/*background-color: #0065a5;*/}.middle .leftMenu .topMenu .banshi{	padding-left: 23px;	float: left;	padding-top: 20px;}.middle .leftMenu .topMenu .menuTitle{	text-align: center;	color: #F2F2F2;	float: left;	line-height: 60px;	font-size: 16px;	width: 120px;}.menu_list {	width: 220px;	background: #354045;}.menu_list ul li{	display: block;	text-align: center;	width: 100%;}.menu_list ul li .fuMenu{	color: #F2F2F2;	font-size: 14px;	cursor: pointer;	height: 60px;	line-height: 60px;	text-align: center;	width: 220px;	border-bottom: 1px solid #16222b;	float: left;}.menu_list ul li .fuMenu a{	display:block;	color: #F2F2F2;	width: 220px;	height: 60px;}.menu_list ul li .xiala{	float: left;	margin-left: -50px;	margin-top: 27px;}.menu_list ul li .div1 {	width: 100%;	height: auto;	float: left;}.menu_list ul li .div1 .zcd{	color: #869fb1;	font-size: 14px;	height: 60px;	background-color: #131e26;	margin-bottom: 1px;	cursor: pointer;	line-height: 60px;	text-align: center;	width: 220px;}.menu_list ul li .div1 .zcd a{	color: #869fb1;	font-size: 14px;	display:block;	height: 60px;	width: 220px;}.div1 {	height: 200px;	display: none;}.menu_list ul li .div1 .zcd:hover{ color: #FFF; background-color: #1c2b36; font-weight: bold; }.menu_list ul li .div1 .zcd a:hover{ color: #FFF; background-color: #1c2b36; font-weight: bold; }.removes{	color: #0FB9EF !important;	border-left: 3px solid #0FB9EF;}

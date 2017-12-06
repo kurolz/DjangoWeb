@@ -1,292 +1,292 @@
-/*{% load staticfiles %}*/
-.user_gncj{
-    width:90px;
-    height: 40px;
-    margin-top: 10px;
-    margin-left: 50px;
-    position: relative;
-    left:0;
-}
-.user_gnlb{
-    margin-top: 10px;
-    margin-left: 10px;
-    position: absolute;
-    left: 150px;
-    top: 50px;
-}
-.user_add{
-    font-size: 14px;
-    color: #4abdee;
-    line-height: 40px;
-}
-.user_hr{
-    width:75%;
-    height:1px;
-    margin-left: 60px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding:0;
-    background-color:#D5D5D5;
-    /*overflow:hidden;*/
-}
-.user_gn a{
-    display: block;
-    width: 90px;
-    height: 50px;
-}
-.user_list{
-    margin: 15px;
-    width: 80%;
-    height: 650px;
-    border-radius: 6px;
-}
-.user_list_ls td{
-    white-space: nowrap;
-    border-bottom:solid 1px #b1aba2;
-    padding-right:10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-weight: normal;
-}
-.user_list_ls  tr{
-    height: 50px;
-}
-.user_list_ls tr th{
-    padding-right: 10px;
-    border-bottom:solid 1px #b1aba2;
-}
-.drpage{
-    padding-top: 20px;
-}
-.drpage .fy{
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border:1px;
-    border-style:solid;
-    border-color: #e3e0dc;
-}
-table {
-    *border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-.user_list_ls {
-    border: solid #ccc 1px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-box-shadow: 0 1px 1px #ccc;
-    -moz-box-shadow: 0 1px 1px #ccc;
-    box-shadow: 0 1px 1px #ccc;
-    height: 650px;
-}
-
-.user_list_ls tr:hover {
-    background: #3180c5;
-    -o-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
-}
-
-.user_list_ls td, .user_list_ls th {
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-    color:#1c2b36;
-}
-
-.user_list_ls th {
-    background-color: #3180c5;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#3180c5), to(#3180c5));
-    background-image: -webkit-linear-gradient(top, #3180c5, #3180c5);
-    background-image:    -moz-linear-gradient(top, #3180c5, #3180c5);
-    background-image:     -ms-linear-gradient(top, #3180c5, #3180c5);
-    background-image:      -o-linear-gradient(top, #3180c5, #3180c5);
-    background-image:         linear-gradient(top, #3180c5, #3180c5);
-    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
-    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
-    border-top: none;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-}
-
-.user_list_ls td:first-child, .bordered th:first-child {
-    border-left: none;
-}
-
-.user_list_ls th:first-child {
-    -moz-border-radius: 6px 0 0 0;
-    -webkit-border-radius: 6px 0 0 0;
-    border-radius: 6px 0 0 0;
-}
-
-.user_list_ls th:last-child {
-    -moz-border-radius: 0 6px 0 0;
-    -webkit-border-radius: 0 6px 0 0;
-    border-radius: 0 6px 0 0;
-}
-
-.user_list_ls th:only-child{
-    -moz-border-radius: 6px 6px 0 0;
-    -webkit-border-radius: 6px 6px 0 0;
-    border-radius: 6px 6px 0 0;
-}
-
-.user_list_ls tr:last-child td:first-child {
-    -moz-border-radius: 0 0 0 6px;
-    -webkit-border-radius: 0 0 0 6px;
-    border-radius: 0 0 0 6px;
-}
-
-.user_list_ls tr:last-child td:last-child {
-    -moz-border-radius: 0 0 6px 0;
-    -webkit-border-radius: 0 0 6px 0;
-    border-radius: 0 0 6px 0;
-}
-.button.icon:before {
-    content: "";
-    position: relative;
-    top: 1px;
-    float:left;
-    width: 12px;
-    height: 12px;
-    margin: 0 0.75em 0 -0.25em;
-    background: url("/static/img/gh-icons.png") 0 99px no-repeat;
-}
-
-
-/* ------------------------------------------
- * CSS3 GITHUB BUTTONS (Nicolas Gallagher)
- * Licensed under Unlicense
- * http://github.com/necolas/css3-github-buttons
- * --------------------------------------- */
-
-
-/* =============================================================================
-   Base Button
-   ========================================================================== */
-.button {
-    position: relative;
-    overflow: visible;
-    display: inline-block;
-    padding: 0.5em 1em;
-    border: 1px solid #d4d4d4;
-    margin: 0;
-    text-decoration: none;
-    text-align: center;
-    text-shadow: 1px 1px 0 #fff;
-    font:11px/normal sans-serif;
-    color: #333;
-    white-space: nowrap;
-    cursor: pointer;
-    outline: none;
-    background-color: #ececec;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
-    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
-    background-image: -o-linear-gradient(#f4f4f4, #ececec);
-    background-image: linear-gradient(#f4f4f4, #ececec);
-    -moz-background-clip: padding; /* for Firefox 3.6 */
-    background-clip: padding-box;
-    border-radius: 0.2em;
-    /* IE hacks */
-    zoom: 1;
-    *display: inline;
-}
-
-.button:hover,
-.button:focus,
-.button:active,
-.button.active {
-    border-color: #3072b3;
-    border-bottom-color: #2a65a0;
-    text-decoration: none;
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-    color: #fff;
-    background-color: #3c8dde;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
-    background-image: -moz-linear-gradient(#599bdc, #3072b3);
-    background-image: -o-linear-gradient(#599bdc, #3072b3);
-    background-image: linear-gradient(#599bdc, #3072b3);
-}
-
-.button:active,
-.button.active {
-    border-color: #2a65a0;
-    border-bottom-color: #3884cd;
-    background-color: #3072b3;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
-    background-image: -moz-linear-gradient(#3072b3, #599bdc);
-    background-image: -ms-linear-gradient(#3072b3, #599bdc);
-    background-image: -o-linear-gradient(#3072b3, #599bdc);
-    background-image: linear-gradient(#3072b3, #599bdc);
-}
-/* overrides extra padding on button elements in Firefox */
-.button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-/* =============================================================================
-   Button icons
-   ========================================================================== */
-.button.add.icon:before { background-position: 0 -288px; }
-.button.add.icon:hover:before,
-.button.add.icon:focus:before,
-.button.add.icon:active:before { background-position: -12px -288px; }
-
-.button.home.icon:before { background-position: 0 -168px; }
-.button.home.icon:hover:before,
-.button.home.icon:focus:before,
-.button.home.icon:active:before { background-position: -12px -168px; }
-
-
-/* ========================================User_Add.html========================================== */
-.user_add{
-    text-align: left;
-    margin-left: 100px;
-    margin-right: 70px;
-}
-.user_add dl{
-    width: 400px;
-    margin-bottom: 15px;
-    height: 50px;
-}
-.user_add dl dt{
-    font-size: 16px;
-    color: rgba(0,0,0,0.8);
-    width: 100px;
-    float: left;
-}
-.user_add dl dd{
-    width:250px;
-    float: left;
-}
-.user_add dl dd input{
-    font-size:15px;
-    height: 40px;
-    color: #2E3642;
-    border: solid 1px #b1aba2;
-}
-.user_add_bing{
-    background-color: #1FC877;
-    border-radius: 5px;
-    font-size: 13px;
-    color: #292929;
-    width: 70px;
-    height: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.user_add .updateusername{
-    color: #0FB9EF;
-    font-size: 18px;
-    font-weight: bold;
-}
-
+/*{% load staticfiles %}*/
+.user_gncj{
+    width:90px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 50px;
+    position: relative;
+    left:0;
+}
+.user_gnlb{
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    left: 150px;
+    top: 50px;
+}
+.user_add{
+    font-size: 14px;
+    color: #4abdee;
+    line-height: 40px;
+}
+.user_hr{
+    width:75%;
+    height:1px;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:0;
+    background-color:#D5D5D5;
+    /*overflow:hidden;*/
+}
+.user_gn a{
+    display: block;
+    width: 90px;
+    height: 50px;
+}
+.user_list{
+    margin: 15px;
+    width: 80%;
+    height: 650px;
+    border-radius: 6px;
+}
+.user_list_ls td{
+    white-space: nowrap;
+    border-bottom:solid 1px #b1aba2;
+    padding-right:10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+.user_list_ls  tr{
+    height: 50px;
+}
+.user_list_ls tr th{
+    padding-right: 10px;
+    border-bottom:solid 1px #b1aba2;
+}
+.drpage{
+    padding-top: 20px;
+}
+.drpage .fy{
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border:1px;
+    border-style:solid;
+    border-color: #e3e0dc;
+}
+table {
+    *border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.user_list_ls {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+    height: 650px;
+}
+
+.user_list_ls tr:hover {
+    background: #3180c5;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.user_list_ls td, .user_list_ls th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    color:#1c2b36;
+}
+
+.user_list_ls th {
+    background-color: #3180c5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3180c5), to(#3180c5));
+    background-image: -webkit-linear-gradient(top, #3180c5, #3180c5);
+    background-image:    -moz-linear-gradient(top, #3180c5, #3180c5);
+    background-image:     -ms-linear-gradient(top, #3180c5, #3180c5);
+    background-image:      -o-linear-gradient(top, #3180c5, #3180c5);
+    background-image:         linear-gradient(top, #3180c5, #3180c5);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.user_list_ls td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.user_list_ls th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.user_list_ls th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.user_list_ls th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.user_list_ls tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.user_list_ls tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+.button.icon:before {
+    content: "";
+    position: relative;
+    top: 1px;
+    float:left;
+    width: 12px;
+    height: 12px;
+    margin: 0 0.75em 0 -0.25em;
+    background: url("/static/img/gh-icons.png") 0 99px no-repeat;
+}
+
+
+/* ------------------------------------------
+ * CSS3 GITHUB BUTTONS (Nicolas Gallagher)
+ * Licensed under Unlicense
+ * http://github.com/necolas/css3-github-buttons
+ * --------------------------------------- */
+
+
+/* =============================================================================
+   Base Button
+   ========================================================================== */
+.button {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #d4d4d4;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    font:11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    background-color: #ececec;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
+    background-image: -o-linear-gradient(#f4f4f4, #ececec);
+    background-image: linear-gradient(#f4f4f4, #ececec);
+    -moz-background-clip: padding; /* for Firefox 3.6 */
+    background-clip: padding-box;
+    border-radius: 0.2em;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+}
+
+.button:hover,
+.button:focus,
+.button:active,
+.button.active {
+    border-color: #3072b3;
+    border-bottom-color: #2a65a0;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #fff;
+    background-color: #3c8dde;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+    background-image: -moz-linear-gradient(#599bdc, #3072b3);
+    background-image: -o-linear-gradient(#599bdc, #3072b3);
+    background-image: linear-gradient(#599bdc, #3072b3);
+}
+
+.button:active,
+.button.active {
+    border-color: #2a65a0;
+    border-bottom-color: #3884cd;
+    background-color: #3072b3;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
+    background-image: -moz-linear-gradient(#3072b3, #599bdc);
+    background-image: -ms-linear-gradient(#3072b3, #599bdc);
+    background-image: -o-linear-gradient(#3072b3, #599bdc);
+    background-image: linear-gradient(#3072b3, #599bdc);
+}
+/* overrides extra padding on button elements in Firefox */
+.button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+/* =============================================================================
+   Button icons
+   ========================================================================== */
+.button.add.icon:before { background-position: 0 -288px; }
+.button.add.icon:hover:before,
+.button.add.icon:focus:before,
+.button.add.icon:active:before { background-position: -12px -288px; }
+
+.button.home.icon:before { background-position: 0 -168px; }
+.button.home.icon:hover:before,
+.button.home.icon:focus:before,
+.button.home.icon:active:before { background-position: -12px -168px; }
+
+
+/* ========================================User_Add.html========================================== */
+.user_add{
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 70px;
+}
+.user_add dl{
+    width: 400px;
+    margin-bottom: 15px;
+    height: 50px;
+}
+.user_add dl dt{
+    font-size: 16px;
+    color: rgba(0,0,0,0.8);
+    width: 100px;
+    float: left;
+}
+.user_add dl dd{
+    width:250px;
+    float: left;
+}
+.user_add dl dd input{
+    font-size:15px;
+    height: 40px;
+    color: #2E3642;
+    border: solid 1px #b1aba2;
+}
+.user_add_bing{
+    background-color: #1FC877;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #292929;
+    width: 70px;
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.user_add .updateusername{
+    color: #0FB9EF;
+    font-size: 18px;
+    font-weight: bold;
+}
+

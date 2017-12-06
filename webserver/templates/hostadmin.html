@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<link href="{%static "css/bootstrap/bootstrap.min.css" %}" rel="stylesheet" type="text/css" >
+<link href="{%static "css/bootstrap/bootstrap-table.css" %}" rel="stylesheet" type="text/css" >
+<link href="{%static "css/adstyle.css" %}" rel="stylesheet" type="text/css" />
+<link href="{%static "css/code/prism.css" %}" rel="stylesheet" type="text/css" />
+<script src="{%static "js/code/prism.js" %}"></script>
+{% include "header.html" %}
+<style>
+    body{
+        background-color: #F2F2F2;
+        margin-left: 220px;
+        margin-top: 110px;
+    }
+</style>
+<body>
+{% include 'menu.html' %}
+<div class="home">
+    <div class="home_right">
+        <div class="homepage">
+            <div class="ptbt"><a>运维平台</a></div>
+            <div class="pagename"><a>执行命令</a></div>
+            <div class="dangqianweizhi"><a>首页 > 主机管理 > 批量管理</a></div>
+        </div>
+    </div>
+</div>
+<div class="content" align="center">
+    <ol class="breadcrumb"  style="background-color: #FFFFFF; margin-bottom: 15px; width: 95%; height: 70px;">
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-2">
+                    {{ search.hostlist }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    {{ search.funlist }}
+                </div>
+            </div>
+            <div class="col-sm-2">
+                 {{ search.command }}
+            </div>
+            <button type="submit" class="btn btn-default" style="float: left;margin-left: 15px; color: #0FB9EF">执行</button>
+        </form>
+    </ol>
+    <div style="width: 95%;background-color: #FFFFFF;height: 630px;padding-top: 15px;">
+        <pre class="language-Makefile" style="width: 96%; height: 600px; padding: 10px; text-align: left; font-size: 15px;">
+            <code class="language-Makefile">{{ result }}</code>
+        </pre>
+    </div>
+</div>
+</body>
+</html>

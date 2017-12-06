@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
 </head>
-{% if password_is_wrong %}
+{% if password.is_wrong %}
     <script type="text/javascript" src="{%static "js/jquery-1.11.0.min.js" %}"></script>
     <script type="text/javascript" src="{%static "js/alert.js" %}"></script>
     <link href="{%static "css/alert.css" %}" rel="stylesheet" type="text/css" />
@@ -15,7 +15,7 @@
     </script>
 {% endif %}
 <body>
-    <div class="admin-ht" style="background: url(/static/images/lo.jpg);">
+    <div class="admin-ht">
         <div class="adminBord">
             <h1>运维管理平台</h1>
         <h4>{{ nowtime }}</h4>
