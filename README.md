@@ -3,13 +3,11 @@ Background based on Django！
 
 欢迎交流：
 
-邮箱：kurolz@163.com
+@邮箱：kurolz@163.com
 
-QQ：526653382
+@QQ：526653382
 
-个人博客：
-
-[http://www.mykurol.com](http://www.mykurol.com)  
+@个人博客： [http://www.mykurol.com](http://www.mykurol.com)  
 
 
 架构：Python+Django+bootstrap+SaltStack+Zabbix+MySQL
