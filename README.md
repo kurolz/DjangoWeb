@@ -1,15 +1,32 @@
 # DjangoWeb
 Background based on Django！
 
-2017.9.1 - 因为本人还是学生，无法得到实际需求，所以这个项目只有用户管理功能，项目暂停，工作以后会继续完善。
+欢迎交流：
 
-2017.10.25 - 本项目已经实现了一些功能，完善后会更新仓库，交流联系QQ：526653382
+邮箱：kurolz@163.com
 
-重新开发了一个博客网站项目继续学习：
+QQ：526653382
+
+个人博客：
 
 [http://www.mykurol.com](http://www.mykurol.com)  
 
-完善后会开源。
+
+架构：Python+Django+bootstrap+SaltStack+Zabbix+MySQL
+
+资产管理：采用SaltStack调用收集主机配置信息入库
+    
+自动添加主机：输入ip、ssh用户名和密码，自动部署salt-minion，主机自动添加到salt-master
+    
+主机批量管理：调用SaltStack实现批量执行命令，结果返回到前端页面，采用Prism高亮展示代码
+    
+监控：采用Zabbix api调用收集数据，采用百度开源的ECharts绘图展示
+    
+    
+心得：
+
+由于是独立开发，python也是自学，从数据的获取(包括各种api的调用,数据库设计查询)，到数据处理，再到前端展示，还有前端设计，遇到过各种问题，经过一段时间学习，成功完成一些功能，打开了思路，后续的思路越来越广，会继续完善这个平台。
+
 
 @@ 使用Docker-compose部署Django环境：
 
