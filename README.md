@@ -1,6 +1,8 @@
 # DjangoWeb
 Background based on Django！
 
+本例只是初级模型，仅供参考。
+
 欢迎交流：
 
 @ 邮箱：kurolz@163.com
