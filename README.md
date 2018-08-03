@@ -1,7 +1,7 @@
 # DjangoWeb
 Background based on Django！
 
-本例只是初级模型，仅供参考。
+本例只是初级模型，是本人练手项目，没有使用价值，仅供参考。
 
 欢迎交流：
 
@@ -207,8 +207,16 @@ DATABASES = {
 
 现在可以将项目移入新建的项目中
 
-然后进入将MySQL文件夹里的OBServer数据库移入mysql容器里
-
+然后进入将MySQL文件夹里的OBServer数据库移入mysql容器里，文件可能有损或版本问题，可自己生成数据表：
+新建一个observer库，使用 
+```Bash
+（1）python manage.py makemigrations 
+（2）python manage.py migrate
+```
+然后创建超级用户
+```Bash
+python manage.py createsuperuser 
+```
 
 进入mysite目录，启动容器：
 ```Bash
