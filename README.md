@@ -7,8 +7,6 @@ Background based on Django！
 
 @ 邮箱：kurolz@163.com
 
-@ QQ：526653382
-
 @ 个人博客： [http://www.mykurol.com](http://www.mykurol.com)  
 
 
