@@ -7,9 +7,6 @@ Background based on Django！
 
 @ 邮箱：kurolz@163.com
 
-@ 个人博客： [http://www.mykurol.com](http://www.mykurol.com)  
-
-
 架构：Python+Django+bootstrap+SaltStack+Zabbix+MySQL
 
 资产管理：采用SaltStack调用收集主机配置信息入库
